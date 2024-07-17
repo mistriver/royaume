@@ -1,8 +1,3 @@
-// DOM elements
-let characterNames = document.querySelectorAll(".character-name");
-let characterHealths = document.querySelectorAll(".character-health");
-let characterPowers = document.querySelectorAll(".character-power");
-
 // Création de la classe Character
 class Character {
   constructor(name, health, power) {
@@ -13,15 +8,19 @@ class Character {
 }
 
 // Création des characters
-let chevalier = new Character("chevalier", 5, 1);
+let knight = new Character("chevalier", 5, 1);
 let mage = new Character("mage", 5, 1);
 
 // Fonction pour afficher les informations des characters
-function displayCharacter(character, nameElement, healthElement, powerElement) {
-  nameElement.textContent = character.name;
-  healthElement.textContent = character.health;
-  powerElement.textContent = character.power;
+function displayCharacter(character, element) {
+  let elementName = document.querySelector(`#${element} .character-name`);
+  let elementHealth = document.querySelector(`#${element} .character-health`);
+  let elementPower = document.querySelector(`#${element} .character-power`);
+  console.log(elementName);
+  elementName.textContent = character.name;
+  elementHealth.textContent = character.health;
+  elementPower.textContent = character.power;
 }
 
-displayCharacter(chevalier, characterNames[0], characterHealths[0], characterPowers[0]);
-displayCharacter(mage, characterNames[1], characterHealths[1], characterPowers[1]);
+displayCharacter(knight, "knight");
+displayCharacter(mage, "mage");
