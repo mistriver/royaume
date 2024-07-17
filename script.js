@@ -65,11 +65,42 @@ function displayResources() {
 
 displayResources();
 
-// Fonction pour générer un monstre avec des stats aléatoires
+// fonction random
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Fonction pour générer un wolf
+function generateWolf() {
+  let health = randomInt(1, 2);
+  let power = randomInt(1, 2);
+  return new Character("wolf", health, power);
+}
+
+// Fonction pour générer un spider 
+function generateSpider() {
+  let health = 1;
+  let power = randomInt(0, 1);
+  return new Character("spider", health, power);
+}
+
+// Fonction pour générer un orque
+function generateOrque() {
+  let health = 10;
+  let power = randomInt(3, 8);
+  return new Character("orque", health, power);
+}
+
+
 function generateMonster() {
-  let health = Math.floor(Math.random() * 2) + 1;
-  let power = Math.floor(Math.random() * 2) + 1;
-  return new Character("monstre", health, power);
+  result = Math.random();
+  if (result <= 0.7) {
+    return generateWolf();
+  } else if (result <= 0.9) {
+    return generateSpider();
+  } else {
+    return generateOrque();
+  }
 }
 
 // une fonction qui permet de lancer une game ie
