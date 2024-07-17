@@ -7,9 +7,21 @@ class Character {
   }
 }
 
+// Création de la classe Building
+class Building {
+  constructor(name, level) {
+    this.name = name;
+    this.level = level;
+  }
+}
+
 // Création des characters
 let knight = new Character("chevalier", 5, 1);
 let mage = new Character("mage", 5, 1);
+
+// Création des buildings
+let tower = new Building("tour", 0);
+let castle = new Building("castle", 0);
 
 // Fonction pour afficher les informations des characters
 function displayCharacter(character, element) {
@@ -24,3 +36,14 @@ function displayCharacter(character, element) {
 
 displayCharacter(knight, "knight");
 displayCharacter(mage, "mage");
+
+// Fonction pour afficher les informations des buildings
+function displayBuilding(building, element) {
+  let elementName = document.querySelector(`#${element} .building-name`);
+  let elementLevel = document.querySelector(`#${element} .building-level`);
+  elementName.textContent = building.name;
+  elementLevel.textContent = building.level;
+}
+
+displayBuilding(tower, "tower");
+displayBuilding(castle, "castle");
