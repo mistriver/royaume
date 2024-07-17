@@ -47,3 +47,16 @@ function displayBuilding(building, element) {
 
 displayBuilding(tower, "tower");
 displayBuilding(castle, "castle");
+
+// Stock des ressources
+let resources = {
+  gold: 0,
+};
+
+// Fonction pour afficher les ressources
+function displayResources() {
+  let elementGold = document.querySelector("#resources .gold");
+  elementGold.textContent = resources.gold;
+}
+
+displayResources();
