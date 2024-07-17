@@ -60,3 +60,20 @@ function displayResources() {
 }
 
 displayResources();
+
+// une fonction qui permet de lancer une game ie
+//  - définir combien ça ramène d'or -> entre 0 et 3 aléatoirement 
+// - afficher dans l'historique combien on a ramené 
+//  - mettre à jour le compteur de ressources
+
+let historique = document.querySelector("#historique");
+let button = document.querySelector("#button-run");
+function run(){
+  // définir combien ça ramène d'or -> entre 0 et 3 aléatoirement
+  result = Math.floor(Math.random() * 4);
+  historique.insertAdjacentHTML("beforeend",`<li>Vous avez ramené ${result} d'or</li>`);
+  resources.gold += result; 
+  displayResources();
+}
+
+button.addEventListener("click", run);
