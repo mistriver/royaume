@@ -71,7 +71,7 @@ let button = document.querySelector("#button-run");
 function run(){
   // définir combien ça ramène d'or -> entre 0 et 3 aléatoirement
   result = Math.floor(Math.random() * 4);
-  historique.insertAdjacentHTML("beforeend",`<li>Vous avez ramené ${result} d'or</li>`);
+  historique.insertAdjacentHTML("afterbegin",`<li>Vous avez ramené ${result} d'or</li>`);
   resources.gold += result; 
   displayResources();
 }
